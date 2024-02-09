@@ -17,9 +17,6 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.9.1"
   },
-  "engines": {
-    "node": ">=18.18.0 <20.10.0"
-  },
   "devDependencies": {
     "nodemon": "^3.0.3"
   },
