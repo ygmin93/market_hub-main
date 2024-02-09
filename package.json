@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index"
+    "start": "node src/index"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +15,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.9.1"
-  },
-  "devDependencies": {
+    "mysql2": "^3.9.1",
     "nodemon": "^3.0.3"
   },
   "description": ""
