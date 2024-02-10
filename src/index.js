@@ -18,15 +18,15 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const PORT = process.env.PORT || 8080;
-
-app.use('/api', (req, res, next) => {
-    const token = req.headers['authorization'];
+app.use('/api', authenticationRoutes);
+// app.use('/api', (req, res, next) => {
+//     const token = req.headers['authorization'];
     
-    if (req.path === '/login' && req.method === 'POST') {
-        return next();
-    }
-    authenticateToken(req, res, next);
-}, authenticationRoutes);
+//     if (req.path === '/login' && req.method === 'POST') {
+//         return next();
+//     }
+//     authenticateToken(req, res, next);
+// }, authenticationRoutes);
 
 //app.use('/api', authenticationRoutes);
 
