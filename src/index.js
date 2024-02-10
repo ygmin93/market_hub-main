@@ -30,9 +30,6 @@ app.use('/api', authenticationRoutes);
 
 //app.use('/api', authenticationRoutes);
 
-// -- ADMIN --
-app.use('/api', authenticateAdminToken, adminRoutes);
-
 // -- NON-ADMIN --
 app.use('/api', authenticateToken, userProfileRoutes);
 app.use('/api', authenticateToken, productRoutes);
@@ -42,6 +39,9 @@ app.use('/api', authenticateToken, orderRoutes);
 app.use('/api', authenticateToken, cartRoutes);
 app.use('/api', authenticateToken, reviewsRoutes);
 app.use('/api', authenticateToken, authenticationRoutes);
+
+// -- ADMIN --
+app.use('/api', authenticateAdminToken, adminRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
