@@ -295,7 +295,7 @@ router.put('/orders/:order_id/status', authenticateAdminToken, async (req, res) 
         const orderId = req.params.order_id;
         const { status } = req.body;
 
-        const getOrderQuery = 'SELECT * FROM orders where oder_id = ?';
+        const getOrderQuery = 'SELECT * FROM orders where order_id = ?';
         const [orderRows] = await db.promise().execute(getOrderQuery, [orderId]);
 
         if(orderRows.length === 0){
