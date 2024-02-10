@@ -28,7 +28,7 @@ app.use('/api', (req, res, next) => {
     authenticateToken(req, res, next);
 }, authenticationRoutes);
 
-app.use('/api', authenticationRoutes);
+//app.use('/api', authenticationRoutes);
 
 // -- ADMIN --
 app.use('/api', authenticateAdminToken, adminRoutes);

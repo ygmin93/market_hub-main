@@ -2,13 +2,13 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('../../migrations/db');
-// const authenticateToken = require('../middlewares/jwt');
+const authenticateToken = require('../middlewares/jwt');
 const { secretKey } = require('../config/secretkey');
 
 const router = express.Router();
 
 // Register
-router.post('/register', async (req, res) => {
+router.post('/register', authenticateToken, async (req, res) => {
     try {
         const { name, username, password, email, address, phone_number} = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
