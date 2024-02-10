@@ -38,7 +38,7 @@ app.use('/api', authenticateToken, cartRoutes);
 app.use('/api', authenticateToken, orderRoutes);
 app.use('/api', authenticateToken, orderItemsRoutes);
 app.use('/api', authenticateToken, reviewsRoutes);
-app.use('/api', authenticateToken, authenticationRoutes);
+//app.use('/api', authenticateToken, authenticationRoutes);
 
 // -- ADMIN --
 app.use('/api', authenticateAdminToken, adminRoutes);
