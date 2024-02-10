@@ -18,9 +18,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const PORT = process.env.PORT || 8080;
-app.get('/', (req, res) => {
-    res.json({ message: 'New Route in API/USER/DISPLAY Route' });
-});
+
 app.use('/api', (req, res, next) => {
     const token = req.headers['authorization'];
     
