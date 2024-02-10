@@ -8,7 +8,7 @@ const { secretKey } = require('../config/secretkey');
 const router = express.Router();
 
 // Register
-router.post('/register', authenticateToken, async (req, res) => {
+router.post('/register', async (req, res) => {
     try {
         const { name, username, password, email, address, phone_number} = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
