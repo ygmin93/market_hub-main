@@ -34,9 +34,9 @@ app.use('/api', authenticationRoutes);
 app.use('/api', authenticateToken, userProfileRoutes);
 app.use('/api', authenticateToken, productRoutes);
 app.use('/api', authenticateToken, productCategoryRoutes);
-app.use('/api', authenticateToken, orderItemsRoutes);
-app.use('/api', authenticateToken, orderRoutes);
 app.use('/api', authenticateToken, cartRoutes);
+app.use('/api', authenticateToken, orderRoutes);
+app.use('/api', authenticateToken, orderItemsRoutes);
 app.use('/api', authenticateToken, reviewsRoutes);
 app.use('/api', authenticateToken, authenticationRoutes);
 
