@@ -35,7 +35,7 @@ router.get('/wishlist/:user_id', authenticateToken, async (req, res) => {
         const userId = req.params.user_id;
 
         const getWishlistQuery = `
-            SELECT products.product_id, products.product_name, products.description, products.price
+            SELECT wishlist_id, products.product_id, products.product_name, products.description, products.price
             FROM wishlist
             INNER JOIN products ON wishlist.product_id = products.product_id
             WHERE wishlist.user_id = ?
