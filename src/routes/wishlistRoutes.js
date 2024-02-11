@@ -52,7 +52,6 @@ router.get('/wishlist/:user_id', authenticateToken, async (req, res) => {
 // Add Wishlist Item to Cart
 router.post('/wishlist/add-to-cart/:wishlist_id', authenticateToken, async (req, res) => {
     try {
-        const { user_id } = req.body;
         const { wishlist_id } = req.params;
 
         const getWishlistItemQuery = 'SELECT * FROM wishlist WHERE wishlist_id = ? AND user_id = ?';
