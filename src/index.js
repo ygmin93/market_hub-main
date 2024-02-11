@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const authenticateToken = require('../src/middlewares/jwt');
+const { authenticateToken, authenticateAdminToken } = require('../src/middlewares/jwt');
 const authenticationRoutes = require('../src/routes/authenticationRoutes');
 const userProfileRoutes = require('../src/routes/userProfileRoutes');
 const productRoutes = require('../src/routes/productCategoryRoutes');
@@ -11,7 +11,6 @@ const orderRoutes = require('../src/routes/orderRoutes');
 const orderItemsRoutes = require('../src/routes/orderItemsRoutes');
 const reviewsRoutes = require('../src/routes/reviewsRoutes');
 const wishlistRoutes = require('../src/routes/wishlistRoutes');
-const authenticateAdminToken = require('../src/middlewares/jwt')
 const adminRoutes = require('./routes/adminRoutes');
 const db = require('../migrations/db');
 
