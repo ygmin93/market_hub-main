@@ -12,8 +12,14 @@ const authenticateToken = (req, res, next) => {
         if (err) {
             return res.status(403).json({ error: 'Forbidden: Invalid Token' });
         }
-        req.user = user;
-        next();
+        // req.user = user;
+        // next();
+        if (user.role !== 'admin') {
+            req.user = user;
+            next();
+          } else {
+            return res.status(403).json({ error: 'Forbidden: Insufficient privileges' });
+        }
     });
 };
 
