@@ -84,7 +84,7 @@ router.put('/order_item/:order_item_id', authenticateToken, async (req, res) =>{
         res.status(200).json({message: 'Item updated successfully'});
     }catch(error){
         console.error('Error updating item:', error);
-        res.status(500).json({error: 'Internal Server Error'});
+        res.status(500).json({error: error.message});
     }
 });
 
