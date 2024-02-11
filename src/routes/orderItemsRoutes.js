@@ -65,7 +65,7 @@ router.put('/order_item/:order_item_id', authenticateToken, async (req, res) =>{
         const orderItemId = req.params.order_item_id;
         const { order_id, product_id, quantity } = req.body;
 
-        const getOrderItemQuery = 'SELECT * FROM order_items where oder_item_id = ?';
+        const getOrderItemQuery = 'SELECT * FROM order_items where order_item_id = ?';
         const [orderItemRows] = await db.promise().execute(getOrderItemQuery, [orderItemId]);
 
         if(orderItemRows.length === 0){
