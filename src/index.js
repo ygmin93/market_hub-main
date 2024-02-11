@@ -10,6 +10,7 @@ const cartRoutes = require('../src/routes/cartRoutes');
 const orderRoutes = require('../src/routes/orderRoutes');
 const orderItemsRoutes = require('../src/routes/orderItemsRoutes');
 const reviewsRoutes = require('../src/routes/reviewsRoutes');
+const wishlistRoutes = require('../src/routes/wishlistRoutes');
 const authenticateAdminToken = require('../src/middlewares/jwt')
 const adminRoutes = require('./routes/adminRoutes');
 const db = require('../migrations/db');
@@ -39,6 +40,7 @@ app.use('/api', authenticateToken, cartRoutes);
 app.use('/api', authenticateToken, orderRoutes);
 app.use('/api', authenticateToken, orderItemsRoutes);
 app.use('/api', authenticateToken, reviewsRoutes);
+app.use('/api', authenticateToken, wishlistRoutes);
 //app.use('/api', authenticateToken, authenticationRoutes);
 
 // -- ADMIN --
