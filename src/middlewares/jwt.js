@@ -12,14 +12,8 @@ const authenticateToken = (req, res, next) => {
         if (err) {
             return res.status(403).json({ error: 'Forbidden: Invalid Token' });
         }
-        // req.user = user;
-        // next();
-        if (user.role !== 'admin') {
-            req.user = user;
-            next();
-          } else {
-            return res.status(403).json({ error: 'Forbidden: Insufficient privileges' });
-        }
+        req.user = user;
+        next();
     });
 };
 
@@ -34,8 +28,14 @@ const authenticateAdminToken = (req, res, next) => {
         if (err || user.role !== 'admin') {
             return res.status(403).json({ error: 'Forbidden: Invalid or insufficient privileges' });
         }
-        req.user = user;
-        next();
+        // req.user = user;
+        // next();
+        if (user.role !== 'admin') {
+            req.user = user;
+            next();
+          } else {
+            return res.status(403).json({ error: 'Forbidden: Insufficient privileges' });
+        }
     });
 };
 
