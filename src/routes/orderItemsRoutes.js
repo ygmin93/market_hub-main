@@ -79,7 +79,7 @@ router.put('/order_item/:order_item_id', authenticateToken, async (req, res) =>{
         const subtotal = productPrice * quantity;
 
         const updateOrderItemQuery = 'UPDATE order_items SET order_id = ?, product_id = ?, quantity = ?, subtotal = ? WHERE order_item_id = ?';
-        await db.promise().execute(updateOrderItemQuery, [order_id, product_id, quantity, subtotal ]);
+        await db.promise().execute(updateOrderItemQuery, [order_id, product_id, quantity, subtotal]);
 
         res.status(200).json({message: 'Item updated successfully'});
     }catch(error){
