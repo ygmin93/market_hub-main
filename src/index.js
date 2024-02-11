@@ -1,16 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { authenticateToken, authenticateAdminToken } = require('../src/middlewares/jwt');
-const adminRoutes = require('./routes/adminRoutes');
-const productRoutes = require('../src/routes/productCategoryRoutes');
-const productCategoryRoutes = require('../src/routes/productRoutes');
-const orderItemsRoutes = require('../src/routes/orderItemsRoutes');
-const orderRoutes = require('../src/routes/orderRoutes');
-const cartRoutes = require('../src/routes/cartRoutes');
-const reviewsRoutes = require('../src/routes/reviewsRoutes');
+const authenticateToken = require('../src/middlewares/jwt');
 const authenticationRoutes = require('../src/routes/authenticationRoutes');
 const userProfileRoutes = require('../src/routes/userProfileRoutes');
+const productRoutes = require('../src/routes/productCategoryRoutes');
+const productCategoryRoutes = require('../src/routes/productRoutes');
+const cartRoutes = require('../src/routes/cartRoutes');
+const orderRoutes = require('../src/routes/orderRoutes');
+const orderItemsRoutes = require('../src/routes/orderItemsRoutes');
+const reviewsRoutes = require('../src/routes/reviewsRoutes');
+const authenticateAdminToken = require('../src/middlewares/jwt')
+const adminRoutes = require('./routes/adminRoutes');
 const db = require('../migrations/db');
 
 const app = express();
