@@ -10,11 +10,11 @@ const router = express.Router();
 // Register
 router.post('/register', async (req, res) => {
     try {
-        const { name, username, password, email, address, phone_number} = req.body;
+        const { name, username, password, email, address, phone_number, role} = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const insertUserQuery = 'INSERT INTO users(name, username, password, email, address, phone_number) VALUES (?, ?, ?, ?, ?, ?)';
-        await db.promise().execute(insertUserQuery, [name, username, hashedPassword, email, address, phone_number]);
+        const insertUserQuery = 'INSERT INTO users(name, username, password, email, address, phone_number, role) VALUES (?, ?, ?, ?, ?, ?, ?)';
+        await db.promise().execute(insertUserQuery, [name, username, hashedPassword, email, address, phone_number, role]);
 
         res.status(201).json({ message: 'User Registered Successfully' });
     } catch (error) {

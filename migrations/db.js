@@ -3,9 +3,9 @@ const mysql = require('mysql2');
 
 const db = mysql.createConnection({
     host: 'sql6.freemysqlhosting.net',
-    user: 'sql6683203',
-    password: 'p6DMkVMC7w',
-    database: 'sql6683203',
+    user: 'sql6683678',
+    password: 'easS8CLbjU',
+    database: 'sql6683678',
 });
 
 db.connect((err) => {
