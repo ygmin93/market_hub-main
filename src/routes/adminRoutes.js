@@ -257,7 +257,7 @@ router.delete('/category/:category_id', authenticateAdminToken, async (req, res)
 // DISPLAY ALL ORDERS
 router.get('/orders', authenticateAdminToken, async(req, res) =>{
     try{
-        const getAllOrderQuery = 'SELECT order_id, product_name, price, user_name, order_date, status FROM orders, products';
+        const getAllOrderQuery = 'SELECT order_id, product_name, price, name, order_date, status FROM orders, users, products';
         const[rows] = await db.promise().execute(getAllOrderQuery);
 
         res.status(200).json({Orders: rows});
