@@ -275,7 +275,7 @@ router.get('/order/:order_id', authenticateAdminToken, async(req, res)=>{
         return res.status(400).send({error: true, message: 'Please provide order id'});
     }
     try{
-        db.query('SELECT order_id, product_name, price, user_name order_date, status FROM orders, products WHERE order_id = ?', id, (err, result)=>{
+        db.query('SELECT order_id, product_name, price, name order_date, status FROM orders, users, products WHERE order_id = ?', id, (err, result)=>{
             if(err){
                 console.error('Error fetching data', err);
                 res.status(500).json({message: 'Internal Server Error'});
